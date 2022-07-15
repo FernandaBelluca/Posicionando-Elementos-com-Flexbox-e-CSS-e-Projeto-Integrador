@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - flex basis</title>
+    <style>
+        .flex-container{
+            max-width: 500px;
+            border: 1px solid black;
+            display: flex;
+        }
+
+        .item{
+            background-color: coral;
+            color: white;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .fbauto{
+            flex-basis: auto;
+        }
+
+        .fb0{
+            flex-basis: 0;
+        }
+
+        .fbw100{
+            flex-basis: 100px;
+        }
+
+        .fg0{
+            flex-grow: 0;
+        }
+
+        .fg1{
+            flex-grow: 1;
+        }
+
+        .fg2{
+            flex-grow: 2;
+        }
+        
+        .fg3{
+            flex-grow: 3;
+        }
+    </style>
+</head>
+<body>
+    <p>flex-basis: auto e flex-grow: 1</p>
+    <div class="flex-container">
+        <div class="item fbauto fg1">A</div>
+        <div class="item fbauto fg1">BB</div>
+        <div class="item fbauto fg1">CCC</div>
+        <div class="item fbauto fg1">DDDD</div>
+    </div>
+
+    <p>flex-basis: auto e flex-grow: 1, 2, 3 e 1</p>
+    <div class="flex-container">
+        <div class="item fbauto fg1">A</div>
+        <div class="item fbauto fg2">BB</div>
+        <div class="item fbauto fg3">CCC</div>
+        <div class="item fbauto fg1">DDDD</div>
+    </div>
+
+    <p>flex-basis: 0 (zero) e flex-grow: 1</p>
+    <div class="flex-container">
+        <div class="item fb0 fg1">AAAAA</div>
+        <div class="item fb0 fg1">BB</div>
+        <div class="item fb0 fg1">CCC</div>
+        <div class="item fb0 fg1">DDDD</div>
+    </div>
+
+    <p>flex-basis + width e flex-grow: 0</p>
+    <div class="flex-container">
+        <div class="item fbw100 fg0">A</div>
+        <div class="item fbw100 fg0">BB</div>
+        <div class="item fbw100 fg0">CCC</div>
+        <div class="item fbw100 fg0">DDDD</div>
+    </div>
+
+    <p>flex-basis + width e flex-grow: 2</p>
+    <div class="flex-container">
+        <div class="item fbw100 fg2">A</div>
+        <div class="item fbw100 fg2">BB</div>
+        <div class="item fbw100 fg2">CCC</div>
+        <div class="item fbw100 fg2">DDDD</div>
+    </div>
+
+    <p>quebra de linha no item A,  flex-basis + width e flex-grow: 2</p>
+    <div class="flex-container">
+        <div class="item fbw100 fg2"><br>A</div>
+        <div class="item fbw100 fg2">BB</div>
+        <div class="item fbw100 fg2">CCC</div>
+        <div class="item fbw100 fg2">DDDD</div>
+    </div>
+    
+</body>
+</html>

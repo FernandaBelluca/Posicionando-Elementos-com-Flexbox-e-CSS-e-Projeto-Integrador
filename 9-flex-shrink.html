@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - flex shrink</title>
+    <style>
+        .flex-container{
+            display: flex;
+            border: 1px solid black;
+            max-width: 350px;
+            margin-bottom: 10px;
+        }
+
+        .item{
+            background-color: orangered;
+            font-size: 24px;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .fs0{
+            flex-shrink: 0;
+            flex-basis: 100px;
+        }
+
+        .fs1{
+            flex-shrink: 1;
+        }
+
+        .fs2{
+            flex-shrink: 2;
+            flex-basis: 100px;
+        }
+
+        .fs3{
+            flex-shrink: 3;
+            flex-basis: 100px;
+        }
+
+        .fg1{
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <p>flex-shrink: 1 e flex-grow: 1</p>
+    <div class="flex-container">
+        <div class="item fs1 fg1">A</div>
+        <div class="item fs1 fg1">B</div>
+        <div class="item fs1 fg1">C</div>
+        <div class="item fs1 fg1">D</div>
+        <div class="item fs1 fg1">E</div>
+        <div class="item fs1 fg1">F</div>
+        <div class="item fs1 fg1">G</div>
+        <div class="item fs1 fg1">H</div>
+        <div class="item fs1 fg1">I</div>
+        <div class="item fs1 fg1">J</div>
+    </div>
+
+    <p>flex-shrink: 1 e flex-grow: 1 - com conteúdos diferentes</p>
+    <div class="flex-container">
+        <div class="item fs1 fg1">A</div>
+        <div class="item fs1 fg1">The generated Lorem Ipsum</div>
+        <div class="item fs1 fg1">C</div>
+        <div class="item fs1 fg1">D</div>
+    </div>
+
+    <p>flex-shrink: 0, flex-basis: 100px e flex-grow: 1 - com conteúdos diferentes</p>
+    <div class="flex-container">
+        <div class="item fs0 fg1">A</div>
+        <div class="item fs0 fg1">The generated</div>
+        <div class="item fs0 fg1">C generated</div>
+        <div class="item fs0 fg1">D</div>
+    </div>
+
+    <p>flex-shrink: (mix) 1, 2, 3, flex-basis: 100px e flex-grow: 1 - com conteúdos diferentes</p>
+    <div class="flex-container">
+        <div class="item fs1 fg1">A</div>
+        <div class="item fs2 fg1">The generated Lorem Ipsum</div>
+        <div class="item fs2 fg1">C</div>
+        <div class="item fs3 fg1">D</div>
+    </div>
+    
+</body>
+</html>
